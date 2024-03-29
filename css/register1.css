@@ -70,7 +70,7 @@
     border: 5px solid #333; 
     border-radius: 10px; 
     text-align: center; 
-    background-color:#FAFAD2;
+    background-color:white;
     font-weight: bold;
 }
 
@@ -89,6 +89,11 @@
     border-radius:5px;
 }
 
+.car-item {
+    display: inline-block; /* 인라인 블록 요소로 설정하여 가로로 나열되도록 함 */
+    margin-right: 10px; /* 각 요소 사이의 간격 설정 */
+}
+
 input#image-register {
     font-size: 15px;
     position:relative; 
@@ -96,7 +101,7 @@ input#image-register {
     left: -290px;
     color: grey;
     border:1px solid gray;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
     width: 310px;
 }
@@ -198,7 +203,6 @@ input:focus { /* 포커스 시 스타일 */
     position:relative;
     left:35px;
     top:10px;
-    background-color: whitesmoke;
 }
 
 .messagegroup textarea:focus{ /*textarea 요소에 커서 활성화가 되면 파란색 테두리와 그림자 효과 추가*/
@@ -215,37 +219,14 @@ input:focus { /* 포커스 시 스타일 */
     left:-80px; top:300px;
     color: grey;
     border:1px solid #ccc;    
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
 
 }
 
-.car-list {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-
-}   
-
-#car-list {
-    width: 1000px; 
-    height: auto;
-    border: 1px hidden;
-    border-radius: 10px; 
-    text-align: left;
-    background-color:white;
-    
-}
-
 .car-item {
     display: inline-block; /* 인라인 블록 요소로 설정하여 가로로 나열되도록 함 */
-    margin-right: 8.5px; /* 각 요소 사이의 간격 설정 */
-    margin-left: 8.5px;
-    border:1px solid #007bff;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    height:100%;
-
-}
+    margin-right: 10px; /* 각 요소 사이의 간격 설정 */
     
+}
 /*--------------------------------------end register.css--------------------------------------*/

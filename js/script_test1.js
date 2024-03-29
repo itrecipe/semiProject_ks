@@ -1,4 +1,4 @@
-//기능 테스트 파일 (신경쓰지 않아도 됨)
+// 기능 테스트 파일 2 (참고 및 수정용, 추후 삭제 예정)
 
 //웹 페이지의 모든 내용이 로드될때, 즉 DOM이 완전히 구성되었을때
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const createList = document.querySelector("#createList")
     const addButton = document.querySelector("#add-button")
     
-
     // 이미지 입력 요소 선택
     const imageInput = document.querySelector("#image-register")
 
