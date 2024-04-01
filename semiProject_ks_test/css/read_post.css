@@ -2,7 +2,7 @@
 
 /* read_post.css */
 .post-page {
-  padding-top: 100px; /* header의 높이만큼 메인 내용이 아래로 밀리도록 설정*/
+  padding-top: 300px; /* header의 높이만큼 메인 내용이 아래로 밀리도록 설정*/
   margin-bottom: 100px; /*푸터와의 간격 조절하기 위해*/
 }
 

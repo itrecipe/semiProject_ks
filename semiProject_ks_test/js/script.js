@@ -15,9 +15,9 @@ const image = document.querySelector('#image-register'); // 이미지 업로드 
 
 // keyCount 변수를 초기화하여 각 차량의 고유한 키 값을 추적합니다.
 let keyCount = 0;
-let carsArray = [];
 
-// 이미지 업로드 함수
+let array = [];
+
 const imageup = (file) => {
     const imageContainer = document.querySelector('.image');
     // 기존에 표시된 이미지를 제거
@@ -45,9 +45,6 @@ const addCar = () => {
 
     // 새로운 차량 항목을 생성합니다.
     const item = document.createElement('div');
-
-    // CSS 클래스를 추가하여 스타일을 적용합니다.
-    item.classList.add('car-item');
     
     // 차량 정보 요소들을 생성합니다.
     const inputIdText = document.createElement('div');
@@ -61,12 +58,6 @@ const addCar = () => {
     const key = keyCount;
     keyCount += 1;
 
-    inputIdText.textContent = `ID: ${inputId.value}`;
-    inputPasswordText.textContent = ` PW: ${inputPassword.value}`; 
-    inputCustomerText.textContent = ` Customer name: ${inputCustomer.value}`;
-    inputCartypeText.textContent = ` Car type: ${inputCartype.value}`;
-    inputMessageText.textContent = ` Message: ${inputMessage.value}`;
-
     // 생성된 요소들을 차량 항목에 추가합니다.
     item.appendChild(imageInput);
     item.appendChild(inputIdText);
@@ -76,37 +67,33 @@ const addCar = () => {
     item.appendChild(inputCartypeText); 
     carlist.appendChild(item);
 
+    // CSS 클래스를 추가하여 스타일을 적용합니다.
+    item.classList.add('car-item'); 
+
+    inputIdText.textContent = `ID: ${inputId.value}`; 
+    inputPasswordText.textContent = ` PW: ${inputPassword.value}`; 
+    inputCustomerText.textContent = ` Customer name: ${inputCustomer.value}`;
+    inputCartypeText.textContent = ` Car type: ${inputCartype.value}`;
+    inputMessageText.textContent = ` Message: ${inputMessage.value}`;
+
     // 이미지의 크기를 설정합니다.
     imageInput.style.width = '200px'; 
     imageInput.style.height = 'auto'; 
     
     // 이미지 파일이 선택되었는지 확인하고, 선택된 경우 이미지를 표시합니다.
-
-    // GPT4 선생님 코드
-
-    // 차량 정보와 이미지 URL을 저장할 배열 초기화
-    
-
     if(image.files.length > 0) {
         const imageUrl = URL.createObjectURL(image.files[0]);
-        imageInput.src = imageUrl; // 이미지 미리보기 설정
-        
-        const carInfo = {
-            id: inputId.value,
-            customer: inputCustomer.value,
-            carType: inputCartype.value,
-            message: inputMessage.value,
-            imageUrl: imageUrl, // 이미지 URL 사용
-            key: keyCount++
-        };
-    
-        carsArray.push(carInfo);
-        console.log(carsArray);
-    
-        localStorage.setItem('st', JSON.stringify(carsArray)); // 차량 정보를 localStorage에 저장
-        console.log(JSON.parse(localStorage.getItem('st')));
+        imageInput.src = imageUrl;
+        // array = imageUrl
+        array = [...array,imageUrl]
+        console.log(array);
+        console.log(image.files[0].name)    
+        localStorage.st = JSON.stringify(array)
     }
 
-}
+    console.log(JSON.parse(localStorage.st))
+   
+};
+
 // 추가 버튼을 클릭 때 addCar 함수를 호출합니다.
 addButton.addEventListener('click', addCar);

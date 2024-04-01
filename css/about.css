@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Pen+Script&family=Noto+Color+Emoji&family=Noto+Sans+KR:wght@100..900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* about.css */
+.about-page {
+  margin-top: 145px;
+}
+
+.about-main {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.about-top {
+  text-align: center; 
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 1rem;
+  margin: 30px 0;
+  color: #404258;
+}
+
+.about-left {
+  flex: 0 0 50%;
+  max-width: 50%; 
+}
+
+.about-left img {
+  width: 100%;
+  padding-right: 100px;
+}
+
+.about-right {
+  flex: 1;
+  padding-left: 30px;
+  padding-right: 100px;
+  
+}
+
+.about-right .about-korean {
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 500;
+  font-family: 'Noto Sans Korean' sans-serif;
+  color: #526D82;
+}
+
+.about-right .about-english {
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 500;
+  font-family: "Noto Sans Korean", sans-serif ;
+  color: #526D82;
+}
+
+.about-right .about-contact {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: bold;
+  font-family: 'Kanit' sans-serif;
+  color: #9DB2BF;
+}

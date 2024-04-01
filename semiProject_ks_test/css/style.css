@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nanum+Pen+Script&family=Noto+Color+Emoji&family=Noto+Sans+KR:wght@100..900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* header.css */
 *{
@@ -93,75 +95,8 @@ header.active{
   z-index: 1;
 }
 
-/* End first.css*/
-
-
-/* about.css */
-.about-page {
-  margin-top: 145px;
-}
-
-.about-main {
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-}
-
-.about-top {
-  text-align: center; 
-  font-size: 14px;
-  font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-bottom: 1rem;
-  margin: 30px 0;
-  color: #404258;
-}
-
-.about-left {
-  flex: 0 0 50%;
-  max-width: 50%; 
-}
-
-.about-left img {
-  width: 100%;
-  padding-right: 100px;
-}
-
-.about-right {
-  flex: 1;
-  padding-left: 30px;
-  padding-right: 100px;
-  
-}
-
-.about-right .about-korean {
-  font-size: 15px;
-  line-height: 1.2;
-  font-weight: 500;
-  font-family: 'Noto Sans Korean' sans-serif;
-  color: #526D82;
-}
-
-.about-right .about-english {
-  font-size: 15px;
-  line-height: 1.2;
-  font-weight: 500;
-  font-family: "Noto Sans Korean", sans-serif ;
-  color: #526D82;
-}
-
-.about-right .about-contact {
-  font-size: 18px;
-  line-height: 1.2;
-  font-weight: bold;
-  font-family: 'Kanit' sans-serif;
-  color: #9DB2BF;
-}
-/*End about.css*/
-
 /* main.css */
 .main {
-  margin-top: 145px;
   margin-bottom: 150px; /*푸터와의 간격 조절하기 위해*/
 }
 
@@ -279,22 +214,10 @@ header.active{
   text-overflow: ellipsis;
 }
 
-.car-div {
-  display: inline-block;
+.test {
   margin:3px;
   text-align: center;
-  width: 30%;
-  height: 450px;
-  margin-right: 5%;
-  padding:1rem 1rem 1.5rem 1rem;
-  background-color: transparent;
-  border:1px solid #ccc;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-
 }
-
-
 /* end main.css */
 
 /* footer.css */

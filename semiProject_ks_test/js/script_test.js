@@ -16,11 +16,30 @@ const image = document.querySelector('#image-register'); // 이미지 업로드 
 // keyCount 변수를 초기화하여 각 차량의 고유한 키 값을 추적합니다.
 let keyCount = 0;
 
-// 값을 담아줄 배열 생성
-let array =""
+const imageup = (file) => {
+    const imageContainer = document.querySelector('.image');
+    // 기존에 표시된 이미지를 제거
+    imageContainer.innerHTML = '';
+    // 새 이미지 요소 생성
+    const image = document.createElement('img');
+    image.src = URL.createObjectURL(file);
+    image.style.width = '308px';
+    image.style.height = '300px';
+    // 이미지 컨테이너에 이미지 추가
+    imageContainer.appendChild(image);
+};
+
+// 파일 입력 요소에 change 이벤트 리스너 추가
+const fileInput = document.querySelector('#image-register');
+fileInput.addEventListener('change', (event) => {
+    // 파일이 선택되었을 때 이미지를 업로드
+    const file = event.target.files[0];
+    if (file) {
+        imageup(file);
+    }
+});
 
 const addCar = () => {
-
     // 새로운 차량 항목을 생성합니다.
     const item = document.createElement('div');
     
@@ -58,27 +77,43 @@ const addCar = () => {
     imageInput.style.width = '200px'; 
     imageInput.style.height = 'auto'; 
     
+    // 이미지를 받을 배열을 생성
+    let array = [];
+
     // 이미지 파일이 선택되었는지 확인하고, 선택된 경우 이미지를 표시합니다.
-    if (true) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            imageInput.src = e.target.result;
-            array= e.target.result
-            console.log(image.files[0].name)    
-            localStorage.st = JSON.stringify(array)
-        }
-        reader.readAsDataURL(image.files[0]);
+    if(image.files.length > 0) {
+        const imageUrl = URL.createObjectURL(image.files[0]);
+        imageInput.src = imageUrl;
+        // array = imageUrl
+        array = [...array,imageUrl]
+        console.log(array);
+        console.log(image.files[0].name)    
+        localStorage.st = JSON.stringify(array)// array 배열에 있는 값을 add_list에게 넘겨주고 있다
     }
 
-    console.log(JSON.parse(localStorage.st))
+    console.log(JSON.parse(localStorage.st))    
 };
 
-// 추가 버튼을 클릭하거나 ID 입력 요소에서 Enter 키를 누를 때 addCar 함수를 호출합니다.
+// 추가 버튼을 클릭 때 addCar 함수를 호출합니다.
 addButton.addEventListener('click', addCar);
-inputId.addEventListener('keyup', (event) => {
-    const ENTER = 13;
-    if (event.keyCode === ENTER) {
-        addCar();
-        console.log(1);
+
+function registerCarInfo(imageUrl, id, customerName, carType) {
+    //로컬 스토리지에서 기존 차량 정보 배열을 불러온다.
+    const carInfos = JSON.parse(localStorage.getItem('st')) || [];
+
+        // 새 차량 정보 객체를 생성합니다.
+        const newCarInfo = {
+            imageUrl: imageUrl,
+            id: id,
+            customerName: customerName,
+            carType: carType
+        };
+        
+        // 배열에 새 차량 정보를 추가합니다.
+        carInfos.push(newCarInfo);
+        
+        // 수정된 배열을 로컬 스토리지에 다시 저장합니다.
+        localStorage.setItem('st', JSON.stringify(carInfos));
+        console.log(newCarInfo);
     }
-});
+
