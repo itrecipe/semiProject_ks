@@ -242,9 +242,10 @@ input:focus { /* 포커스 시 스타일 */
     margin-right: 8.5px; /* 각 요소 사이의 간격 설정 */
     margin-left: 8.5px;
     border:1px solid #007bff;
-    border-radius: 10px;
+    border-radius: 1px;
     margin-bottom: 10px;
     height:100%;
+    text-align: left;
 
 }
     
