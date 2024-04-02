@@ -15,11 +15,13 @@ const image = document.querySelector('#image-register'); // 이미지 업로드 
 
 // keyCount 변수를 초기화하여 각 차량의 고유한 키 값을 추적합니다.
 let keyCount = 0;
+
+//차량의 정보를 저장할 배열
 let carsArray = [];
 
-// 이미지 업로드 함수
+// 이미지 업로드 및 미리보기 기능을 구현
 const imageup = (file) => {
-    const imageContainer = document.querySelector('.image');
+    const imageContainer = document.querySelector('.image'); //이미지를 표시해줄 컨테이너
     // 기존에 표시된 이미지를 제거
     imageContainer.innerHTML = '';
     // 새 이미지 요소 생성
@@ -41,6 +43,7 @@ fileInput.addEventListener('change', (event) => {
     }
 });
 
+//차량 정보를 추가하는 함수
 const addCar = () => {
 
     // 새로운 차량 항목을 생성합니다.
@@ -67,7 +70,10 @@ const addCar = () => {
     inputCartypeText.textContent = ` Car type: ${inputCartype.value}`;
     inputMessageText.textContent = ` Message: ${inputMessage.value}`;
 
-    // 생성된 요소들을 차량 항목에 추가합니다.
+    /* 생성된 요소들을 차량 항목에 추가합니다.
+       createElement를 이용하여 appendChild로
+       요소들을 상속 받는다.
+    */
     item.appendChild(imageInput);
     item.appendChild(inputIdText);
     item.appendChild(inputPasswordText); 
@@ -80,13 +86,13 @@ const addCar = () => {
     imageInput.style.width = '200px'; 
     imageInput.style.height = 'auto'; 
     
-    // 이미지 파일이 선택되었는지 확인하고, 선택된 경우 이미지를 표시합니다.
-
-    // 차량 정보와 이미지 URL을 저장할 배열 초기화
+    /* 이미지 파일이 선택되었는지 확인하고, 선택된 경우 이미지를 표시합니다.
+       차량 정보와 이미지 URL을 저장할 배열 초기화 */
     if(image.files.length > 0) {
         const imageUrl = URL.createObjectURL(image.files[0]);
         imageInput.src = imageUrl; // 이미지 미리보기 설정
         
+        //차량 정보에 대한 객체를 생성한다.
         const carInfo = {
             id: inputId.value,
             customer: inputCustomer.value,
@@ -96,8 +102,9 @@ const addCar = () => {
             key: keyCount++
         };
     
+        //차량 정보에 대한 객체 값을 carsArray라는 배열(변수)에 삽입 한다.
         carsArray.push(carInfo);
-        console.log(carsArray);
+        console.log(carsArray); //carsArray 값이 제대로 들어오는지 디버깅
     
         localStorage.setItem('st', JSON.stringify(carsArray)); // 차량 정보를 localStorage에 저장
         console.log(JSON.parse(localStorage.getItem('st')));
