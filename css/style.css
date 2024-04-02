@@ -168,8 +168,6 @@ header.active{
   margin: 0 auto;
 }
 
-/* 옆으로 클릭하면 넘어가는 건 자바스크립트로 구현하는 부분 같아 우선 가로스크롤로 처리했습니다*/
-
 .main-top {
   overflow-x: auto; /*가로 스크롤 추가*/
   white-space: nowrap; /* 이미지 옆으로 넘어가도록 */
