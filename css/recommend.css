@@ -1,7 +1,7 @@
 
 /* recommend.css */
 .recommend-page {
-  background-color: #DDE6ED;
+  background-color: transparent;
   position: relative;
   z-index: 0;
   width: 100%;
@@ -31,7 +31,13 @@
   padding-bottom: 50px;
 }
 
-.rec-image::before {
+.rec-image img{
+  width: 1140px;
+  height: 500px;
+  float: none;
+}
+
+.rec-image img::before {
   content: ''; 
   position: absolute; 
   top: 0;
@@ -40,12 +46,6 @@
   height: 100%;
   background-image: linear-gradient(rgba(221, 230, 237, 0.3), rgba(221, 230, 237, 0.3)); 
   z-index: 1; 
-}
-
-.rec-image img{
-  width: 1140px;
-  height: 500px;
-  float: none;
 }
 
 .rec-location {

@@ -160,7 +160,6 @@ header.active{
 /* main.css */
 .main {
   margin-top: 145px;
-  margin-bottom: 150px; /*푸터와의 간격 조절하기 위해*/
 }
 
 .main .container {
@@ -168,15 +167,25 @@ header.active{
   margin: 0 auto;
 }
 
-.main-top {
-  overflow-x: auto; /*가로 스크롤 추가*/
-  white-space: nowrap; /* 이미지 옆으로 넘어가도록 */
-}
+/*.main-top {
+  overflow-x: auto; 
+  white-space: nowrap; 
+} */
 
-.main-top img {
+/*.main-top img {
   width: 100%;
   height: 500px;
   margin-right: 10px;
+}*/
+
+.main-top {
+  text-align: center; 
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #404258;
 }
 
 .main-middle {
