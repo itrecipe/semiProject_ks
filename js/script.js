@@ -82,11 +82,7 @@ const addCar = () => {
     
     // 이미지 파일이 선택되었는지 확인하고, 선택된 경우 이미지를 표시합니다.
 
-    // GPT4 선생님 코드
-
     // 차량 정보와 이미지 URL을 저장할 배열 초기화
-    
-
     if(image.files.length > 0) {
         const imageUrl = URL.createObjectURL(image.files[0]);
         imageInput.src = imageUrl; // 이미지 미리보기 설정
