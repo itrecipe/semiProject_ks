@@ -79,7 +79,7 @@ const addCar = () => {
     item.appendChild(inputPasswordText); 
     item.appendChild(inputCustomerText); 
     item.appendChild(inputMessageText); 
-    item.appendChild(inputCartypeText); 
+    item.appendChild(inputCartypeText);
     carlist.appendChild(item);
 
     // 이미지의 크기를 설정합니다.
